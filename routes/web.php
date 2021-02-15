@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\AjaxController@index');
+Route::post('get-states-by-country', 'App\Http\Controllers\AjaxController@getState')->name('get:states');
+Route::post('get-cities-by-state', 'App\Http\Controllers\AjaxController@getCity')->name('get:cities');
